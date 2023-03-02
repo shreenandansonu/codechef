@@ -1,37 +1,39 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
-//For each test case, output a single line containing
-//an integer corresponding to the number of 
-//players that could mishear the message or whisper it wrongly.
 void answer()
 {
-    int n, whispers[n],count=0;
-    cin>>n;
-    for(int j=0;j<n;j++){
-        cin>>whispers[j];
-        }
-    for (int i = 1; i < n; i++)
+    int n;
+    cin >> n;
+    int wish[n];
+    for (int i = 0; i < n; i++)
     {
-        if (whispers[i-1]==whispers[i] and whispers[i]==whispers[i+1]){
+        cin >> wish[i];
+    }
+    int count = 0;
+    for (int j = 1; j < n - 1; j++)
+    {
+        if (wish[j] != wish[j - 1] || wish[j] != wish[j + 1])
+        {
             count++;
         }
-        
     }
-    if(whispers[n-1]==whispers[0]){
+    if (wish[n - 1] != wish[n - 2])
+    {
         count++;
     }
-    
+    if (wish[0] != wish[1])
+    {
+        count++;
     }
-    cout<<count<<endl;
+    cout << count << endl;
 }
 int main()
 {
-int t;
-cin >> t;
-for (int i = 0; i < t; i++)
-{
-answer();
+    int t;
+    cin >> t;
+    for (int i = 0; i < t; i++)
+    {
+        answer();
+    }
+    return 0;
 }
-return 0;
-}
-
