@@ -2,6 +2,8 @@
 using namespace std;
 void answer()
 {
+    int N;
+    cin>>N;
 }
 int main()
 {

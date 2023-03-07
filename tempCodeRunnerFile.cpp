@@ -1,17 +1,46 @@
-16
-2 20
-2 23
-3 20
-3 23
-4 20
-4 23
-5 20
-5 23
-6 20
-6 23
-7 20
-7 23
-8 20
-8 23
-9 20
-9 23
+#include <bits\stdc++.h>
+using namespace std;
+int smae_or_not(int x,string str)
+{
+    for (int j = 1; j < x; j++)
+    {
+        if(str[j]==str[j-1]){
+            continue;
+        }
+        else{
+            return -1;
+            break;
+        }
+    }
+    return 1;
+}
+void answer()
+{
+    string str;
+    cin >> str;
+    int x = str.length();
+    if (x == 1 or x == 2)
+    {
+        cout << "YES"<<endl;
+    }
+    else
+    {
+        if (smae_or_not(x,str)==1){
+            cout<<"YES"<<endl;
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
+    }
+}
+
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        answer();
+    }
+    return 0;
+}
