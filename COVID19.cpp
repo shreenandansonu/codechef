@@ -20,7 +20,7 @@ void answer()
         else{
             at_least=min(at_least,count);
             at_max=max(at_max,count);
-            count=1
+            count=1;
         }
     }
     

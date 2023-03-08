@@ -9,23 +9,21 @@ void answer()
     {
         cin>>arr[i];
     }
-    int at_least=INT_MAX,at_max=INT_MIN,count=1;
-    int dist[n];
-    for (int i = 0; i < n-1; i++)
+    sort(arr,arr+n);
+    int count=1,final=0;
+    for (int i = 0; i < n; i++)
     {
-        dist[i]=arr[i+1]-arr[i];
-        if(dist[i]<=2){
+        if(arr[i]==arr[i+1]){
             count++;
         }
         else{
-            at_least=min(at_least,count);
-            at_max=max(at_max,count);
-            count=1
+            final=max(final,count);
+            count=1;
         }
     }
+    cout<<n-final<<endl;
     
-    cout<<at_least<<" "<<at_max<<endl;
-       
+    
 }
 int main()
 {

@@ -1,0 +1,35 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int T;
+    cin >> T;
+    while (T--)
+    {
+        int n;
+        cin >> n;
+        map<int, int> mp;
+
+        for (int i = 0; i < n; i++)
+        {
+            int x;
+            cin >> x;
+            mp[x]++;
+        }
+        long long ans = 0;
+        const int MOD = 1e9 + 7;
+        long long prev = 1;
+        for (int i = 1; i <= n; i++)
+        {
+            long long temp = prev * mp[i];
+            temp %= MOD;
+            ans += temp;
+            prev = temp;
+            ans %= MOD;
+        }
+
+        cout << ans << endl;
+    }
+    return 0;
+}
