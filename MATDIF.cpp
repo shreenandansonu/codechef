@@ -13,14 +13,13 @@ while(t--)
     {
             for (int j = 1; j < n+1; j++)
             {   
-                if(i%2==0)cout<<count-n<<" ";
-                else cout<<count+n<<" ";
-                count++;
+                cout<<count<<" ";
+                if(count<=(n*n-2)) count+=2;
+                else count=2;
+                
             }
-            cout<<endl;
-            
+            cout<<endl;            
     }
-    
 }
 return 0;
 }
