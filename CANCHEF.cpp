@@ -6,9 +6,10 @@ int t;
 cin >> t;
 while(t--)
 {
-    int n,m;
-    cin>>n>>m;
-    cout<<n-m<<endl;
+ int x,y;
+ cin>>x>>y;
+ if(2*y<=x*15) cout<<"YES"<<endl;
+ else cout<<"NO"<<endl;   
 }
 return 0;
 }
