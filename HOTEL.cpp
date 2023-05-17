@@ -8,18 +8,28 @@ while(t--)
 {
     int N;
     cin>>N;
-    int arri[N],dep[i];
+    int arr[1002]={0},temp;
+    //arrival
     for (int i = 0; i < N; i++)
     {
-        cin>>arri[i];
+       cin>>temp;
+       arr[temp]++;
     }
+    //departure
     for (int i = 0; i < N; i++)
     {
-        cin>>dep[i];
+       cin>>temp;
+       arr[temp]--;
     }
-    int simultaniously=0;
-     
-    
+    //counting the number of people present simultaniously as time passes and recoring the highest number
+    int maxi=INT_MIN;
+    for (int i = 2; i < 1002; i++)
+    {
+        arr[i]+=arr[i-1];
+        maxi=max(maxi,arr[i]);
+    }
+    cout<<maxi<<endl;
+        
     
 }
 return 0;
