@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+# define int long long 
 
 bool ifap(int n, int a[])
 {
@@ -7,7 +8,8 @@ bool ifap(int n, int a[])
     {
         int s = 0, t = n - 1, sum = 2 * a[i];
         while (s < i and t > i)
-        {
+        {    
+            cout<<s<<" "<<i<<" "<<t<<endl;
             if (sum > a[s] + a[t])
                 t--;
             else if (sum < a[s] + a[t])
@@ -19,7 +21,7 @@ bool ifap(int n, int a[])
     return false;
 }
 
-int main()
+signed main()
 {
     int t;
     cin >> t;
@@ -27,7 +29,7 @@ int main()
     {
         int n;
         cin >> n;
-        int a[n];
+        int  a[n];
         for (int i = 0; i < n; i++)
         {
             cin >> a[i];

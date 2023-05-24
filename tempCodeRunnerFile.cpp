@@ -8,38 +8,29 @@ int main()
     {
         int n;
         cin >> n;
-        int a[n],b=1;
-        cin>>a[0];
-        for (int i = 1; i < n; i++)
+        if (n == 1)
         {
-            cin >> a[i];
-            if(a[i]==a[i-1]) b++;
+            cout << 1 << endl;
         }
-        if (n==b){
-            int x=abs(a[n-1]-1);
-            for (int i = 0; i < n; i++)
-            {
-                cout<<x<<" ";
-            }
-            cout<<endl;            
-        }
-        
-        else{
-                    for (int i = 1; i < n; i++)
+        else if (n == 2)
         {
-            cout << a[i] << " ";
-        }
-        if (a[0] == a[1])
-        {
-            cout << a[n - 1] << endl;
+            cout << "2 1" << endl;
         }
         else
         {
-            cout<<abs(a[n-1]-1)<<endl;
+            if (n % 2 == 0)
+            {
+                for (int i = n; i > 0; i--)
+                {
+                    cout << i << " ";
+                }
+                cout << endl;
+            }
+            else
+            {
+                cout << -1 << endl;
+            }
         }
-        }
-        
-
     }
     return 0;
 }
